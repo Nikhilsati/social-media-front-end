@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 		}
 	}
 }));
-const Button = ({ color, variant, disabled, endIcon, startIcon, href, size, rounded, ...otherProps }) => {
+const Button = ({ color, variant, disabled, endIcon, startIcon, href, size, rounded, children, ...otherProps }) => {
 	const classes = useStyles({ color, rounded });
 	return (
 		<Btn
@@ -37,7 +37,7 @@ const Button = ({ color, variant, disabled, endIcon, startIcon, href, size, roun
 			}}
 			{...otherProps}
 		>
-			Click me
+			{children}
 		</Btn>
 	);
 };

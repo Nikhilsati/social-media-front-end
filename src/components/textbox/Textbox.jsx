@@ -1,6 +1,9 @@
 import React from 'react';
 import { InputBase, InputLabel, makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
+	div: {
+		width: '100%'
+	},
 	input: {
 		borderBottom: '1px solid black',
 		borderBottomColor: ({ color }) => theme.palette[color ? color : 'primary'].main
@@ -12,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 const Textbox = ({ color, disabled, label, fullWidth, placeholder, required, type, value }) => {
 	const classes = useStyles({ color });
 	return (
-		<div>
+		<div className={classes.div}>
 			{label ? (
 				<InputLabel
 					classes={{
@@ -33,6 +36,7 @@ const Textbox = ({ color, disabled, label, fullWidth, placeholder, required, typ
 				type={type}
 				value={value}
 				classes={{
+					root: classes.div,
 					input: classes.input
 				}}
 			/>
