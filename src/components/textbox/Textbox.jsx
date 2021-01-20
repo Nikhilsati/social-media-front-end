@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
 		color: ({ color }) => theme.palette[color ? color : 'primary'].main
 	}
 }));
-const Textbox = ({ color, disabled, label, fullWidth, placeholder, required, type, value }) => {
+const Textbox = ({ color, disabled, label, fullWidth, placeholder, required, type, value, ...otherProps }) => {
 	const classes = useStyles({ color });
 	return (
 		<div className={classes.div}>
@@ -39,6 +39,7 @@ const Textbox = ({ color, disabled, label, fullWidth, placeholder, required, typ
 					root: classes.div,
 					input: classes.input
 				}}
+				{...otherProps}
 			/>
 		</div>
 	);
