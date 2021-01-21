@@ -21,16 +21,16 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: 'column'
 	}
 }));
-const initialValues = {
-	name: '',
-	email: '',
-	password: '',
-	MobileNumber: '',
-	Birthday: ''
-};
-const onSubmit = (values) => {
-	console.log('form values', values);
-};
+// const initialValues = {
+// 	name: '',
+// 	email: '',
+// 	password: '',
+// 	MobileNumber: '',
+// 	Birthday: ''
+// };
+// const onSubmit = (values) => {
+// 	console.log('form values', values);
+// };
 // const validate = function () {
 // 	const formik = useFormik({
 // 		initialValues,
@@ -38,28 +38,28 @@ const onSubmit = (values) => {
 // 		validate
 // 	})
 // }
-const validate = (values) => {
-	let errors = {};
-	if (!values.name) {
-		errors.name = 'Required';
-	}
-	if (!values.email) {
-		errors.email = 'Required';
-	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-		errors.email = 'Invalid email format';
-	}
-	if (!values.password) {
-		errors.password = 'Required';
-	}
-	if (!values.MobileNumber) {
-		errors.MobileNumber = 'Required';
-	}
-	if (!values.Birthday) {
-		errors.Birthday = 'Required';
-	}
+// const validate = (values) => {
+// 	let errors = {};
+// 	if (!values.name) {
+// 		errors.name = 'Required';
+// 	}
+// 	if (!values.email) {
+// 		errors.email = 'Required';
+// 	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+// 		errors.email = 'Invalid email format';
+// 	}
+// 	if (!values.password) {
+// 		errors.password = 'Required';
+// 	}
+// 	if (!values.MobileNumber) {
+// 		errors.MobileNumber = 'Required';
+// 	}
+// 	if (!values.Birthday) {
+// 		errors.Birthday = 'Required';
+// 	}
 
-	return errors;
-};
+// 	return errors;
+// };
 const SignUp = () => {
 	const formik = useFormik({
 		initialValues: {

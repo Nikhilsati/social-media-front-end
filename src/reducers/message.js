@@ -1,5 +1,5 @@
 import { SET_MESSAGE, CLEAR_MESSAGE } from '../actions/types.js';
-const initialState = {};
+const initialState = { message: 'dsjkdxn' };
 const reducer = (state = initialState, action) => {
 	const { type, payload } = action;
 	switch (type) {
