@@ -1,8 +1,9 @@
 import React from 'react';
-import { InputBase, InputLabel, makeStyles } from '@material-ui/core';
+import { InputBase, InputLabel, makeStyles, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
 	div: {
-		width: '100%'
+		width: '100%',
+		position: 'relative'
 	},
 	input: {
 		borderBottom: '1px solid black',
@@ -10,9 +11,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 	label: {
 		color: ({ color }) => theme.palette[color ? color : 'primary'].main
+	},
+	error: {
+		position: 'absolute'
 	}
 }));
-const Textbox = ({ color, disabled, label, fullWidth, placeholder, required, type, value, ...otherProps }) => {
+const Textbox = ({ color, disabled, label, fullWidth, placeholder, required, type, value, error, ...otherProps }) => {
 	const classes = useStyles({ color });
 	return (
 		<div className={classes.div}>
@@ -41,6 +45,9 @@ const Textbox = ({ color, disabled, label, fullWidth, placeholder, required, typ
 				}}
 				{...otherProps}
 			/>
+			<Typography className={classes.error} variant="body2" color="error">
+				{error}
+			</Typography>
 		</div>
 	);
 };
