@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_URL = 'http://localhost:4000/api/auth/';
-export const login = (email, password) =>
+export const login = (email, password) => {
 	axios
 		.post(API_URL + 'login', {
 			email,
@@ -9,9 +9,10 @@ export const login = (email, password) =>
 		})
 		.then((res) => {
 			localStorage.setItem('user', res.headers['auth-token']);
-			console.log('auth token for registration', res.headers['auth-token']);
+			return res.headers['auth-token'];
 		})
-		.catch((err) => console.log(err));
+}
+	
 
 export const register = ({ name, email, password, mobile, DOB }) =>
 	axios

@@ -3,7 +3,10 @@ import Button from '../../components/button/Button';
 import Textbox from '../../components/textbox/Textbox';
 import Paper from '../../components/paper/Paper';
 import { makeStyles, Typography } from '@material-ui/core';
+import { Alert } from '@material-ui/lab'
 import { Formik } from 'formik';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogin } from '../../actions/auth.js';
 
 const useStyles = makeStyles((theme) => ({
 	flex: {
@@ -25,12 +28,17 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		flexDirection: 'column'
+	}, 
+	alert: {
+		position: "absolute",
+		top: 50
 	}
 }));
 
 const Login = () => {
 	const classes = useStyles();
-
+	const dispatch = useDispatch();
+	const {message} = useSelector( state => state.message);
 	const validateLogin = (values) => {
 		const errors = {};
 		// for email
@@ -49,10 +57,7 @@ const Login = () => {
 	};
 
 	const onSubmit = (values, { setSubmitting }) => {
-		setTimeout(() => {
-			alert(JSON.stringify(values, null, 2));
-			setSubmitting(false);
-		}, 400);
+		dispatch(userLogin(values.email, values.passsword))
 	};
 	return (
 		<Paper glass className={classes.paper}>
@@ -94,6 +99,12 @@ const Login = () => {
 					</form>
 				)}
 			</Formik>
+			{
+				message? <Alert severity="success" className = {classes.alert}>
+				{message}
+			</Alert>: ""
+			}
+			
 		</Paper>
 	);
 };
