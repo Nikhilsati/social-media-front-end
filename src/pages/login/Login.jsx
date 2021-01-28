@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 	}, 
 	alert: {
 		position: "absolute",
-		top: 50
+		bottom: 50
 	}
 }));
 

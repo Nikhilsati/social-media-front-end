@@ -10,6 +10,7 @@ import HomeIcon from '@material-ui/icons/HomeRounded';
 import SendIcon from '@material-ui/icons/SendRounded';
 import TagFacesIcon from '@material-ui/icons/TagFacesRounded';
 import LikeIcon from '@material-ui/icons/SentimentVerySatisfied';
+import UserIcon from '@material-ui/icons/PermIdentityRounded';
 export {
 	ArrowDropUpIcon,
 	ArrowDropDownIcon,
@@ -22,5 +23,6 @@ export {
 	HomeIcon,
 	SendIcon,
 	TagFacesIcon,
-	LikeIcon
+	LikeIcon,
+	UserIcon
 };
