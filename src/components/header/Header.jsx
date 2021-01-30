@@ -8,7 +8,12 @@ import {
   Menu,
   MenuItem,
 } from "@material-ui/core";
-import { HomeIcon, UserIcon, SendIcon, CameraIcon } from "../icons/Icons";
+import {
+  HomeIcon,
+  UserIcon,
+  FriendRequestIcon,
+  CameraIcon,
+} from "../icons/Icons";
 import Timeline from "../timeline/Timeline";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../actions/auth";
@@ -22,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     height: 40,
   },
   middleMenu: {
-    width: 180,
+    width: 200,
   },
 }));
 
@@ -64,9 +69,9 @@ const Header = () => {
               label: "Post",
             },
             {
-              icon: <SendIcon />,
-              value: "Message",
-              label: "Message",
+              icon: <FriendRequestIcon />,
+              value: "Requests",
+              label: "Requests",
             },
           ]}
         />
