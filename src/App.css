@@ -1,8 +1,5 @@
 body {
 	background-image: url("https://cdn.pixabay.com/photo/2021/01/04/07/33/man-5886719_1280.jpg");
-	height: 100vh;
+	height: calc(100vh - 64px);
 	background-size: cover;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }

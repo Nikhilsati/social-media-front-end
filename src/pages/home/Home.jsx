@@ -1,11 +1,13 @@
 import React from "react";
 import Card from "../../components/card/Card";
 import Paper from "../../components/paper/Paper";
-import { makeStyles } from "@material-ui/core";
-
+import { makeStyles, Grid } from "@material-ui/core";
+import Friends from "../../components/recommendation/Friends";
 const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "90%",
+  },
   paper: {
-    width: "50%",
     padding: 50,
   },
 }));
@@ -51,16 +53,26 @@ const postItems = [
 const Home = () => {
   const classes = useStyles();
   return (
-    <Paper glass className={classes.paper}>
-      {postItems.map((item) => (
-        <Card
-          title={item.title}
-          date={new Date().toString()}
-          postImage={item.postImage}
-          postImageTitle={item.postImageTitle}
-        />
-      ))}
-    </Paper>
+    <Grid container spacing={2} className={classes.root}>
+      <Grid item xs={12} lg={3}>
+        <Friends />
+      </Grid>
+      <Grid item xs={12} lg={6}>
+        <Paper glass className={classes.paper}>
+          {postItems.map((item) => (
+            <Card
+              title={item.title}
+              date={new Date().toString()}
+              postImage={item.postImage}
+              postImageTitle={item.postImageTitle}
+            />
+          ))}
+        </Paper>
+      </Grid>
+      <Grid item xs={12} lg={3}>
+        <Friends />
+      </Grid>
+    </Grid>
   );
 };
 
